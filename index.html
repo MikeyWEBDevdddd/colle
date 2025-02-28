@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randhir College of Commerce</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #f39c12;
+            --accent-color: #3498db;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.8)), 
+                        url('https://source.unsplash.com/random/1920x1080/?university') center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .feature-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            border-radius: 15px;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .news-ticker {
+            background: var(--secondary-color);
+            color: white;
+            padding: 10px 0;
+        }
+
+        .testimonial-carousel .carousel-item {
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 0;
+            margin-top: 5rem;
+            border-top: 3px solid var(--secondary-color);
+        }
+
+        .footer-heading {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .contact-form .form-control {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            margin-bottom: 1rem;
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form .form-control:focus {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: none;
+            border: 1px solid var(--secondary-color);
+        }
+
+        .quick-links {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .quick-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .quick-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .quick-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .submit-btn {
+            background-color: var(--secondary-color);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .quick-links {
+                margin-top: 2rem;
+            }
+        }
+
+        .course-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        a.clear{
+            text-decoration: none;
+            color: black;
+        }
+        a.clear:visited{
+            color: black;
+        }
+        a.clear:hover{
+            color: black;
+        }
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 60vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="logo.jpg" alt="Randhir College of Commerce" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Courses
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="ug.html">Undergraduate</a></li>
+                            <li><a class="dropdown-item" href="pg.html">Postgraduate</a></li>
+                            <li><a class="dropdown-item" href="research.html">Research Programs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="admission.html">Admissions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="college research.html">Research</a></li>
+                    
+                    <li class="nav-item"><a class="btn btn-primary ms-2" href="#">Portal Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-4 mb-4">World Class Education for Future Leaders</h1>
+            <p class="lead mb-4">Join our community of accountant, marketors, management and future businessmen.</p>
+            <a href="apply.html" class="btn btn-warning btn-lg px-5">Apply Now</a>
+        </div>
+    </div>
+
+    <!-- News Ticker -->
+    <div class="news-ticker">
+        <div class="container">
+            <marquee behavior="scroll" direction="left">
+                <span class="me-5">🎓 Admissions Open for 2024 Intake</span>
+                <span class="me-5">🌟 Virtual Campus Tour Available</span>
+                <span class="me-5">📢 Scholarship Applications Deadline Extended</span>
+            </marquee>
+        </div>
+    </div>
+
+    <!-- Quick Links -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card feature-card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-user-graduate fa-3x text-primary mb-3"></i>
+                                <a href="admission.html" class="clear link"><h5>Admissions for UG</h5>
+                            <p>Start your application process</p></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add similar cards for other quick links -->
+                <div class="col-md-3">
+                    <div class="card feature-card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-user-graduate fa-3x text-primary mb-3"></i>
+                                <a href="admission.html" class="clear link"><h5>Admissions for PG</h5>
+                            <p>Start your application process</p></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add similar cards for other quick links -->
+                <div class="col-md-3">
+                    <div class="card feature-card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-user-graduate fa-3x text-primary mb-3"></i>
+                                <a href="admission.html" class="clear link"><h5>Admissions for Research</h5>
+                            <p>Start your application process</p></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add similar cards for other quick links -->
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Popular Courses</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card course-card">
+                        <img src="https://source.unsplash.com/random/800x600/?engineering" class="card-img-top">
+                        <div class="card-body">
+                            <h5>Bachelor of Commerce</h5>
+                            <p>Accountancy, Finance, Management, Human Resoures, Audit, Banking, Business Administration</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more course cards -->
+                <div class="col-md-4">
+                    <div class="card course-card">
+                        <img src="https://source.unsplash.com/random/800x600/?engineering" class="card-img-top">
+                        <div class="card-body">
+                            <h5>Master of Commerce</h5>
+                            <p>Accountancy, Finance, Management, Human Resoures, Audit, Banking, Business Administration</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more course cards -->
+                <div class="col-md-4">
+                    <div class="card course-card">
+                        <img src="https://source.unsplash.com/random/800x600/?engineering" class="card-img-top">
+                        <div class="card-body">
+                            <h5>Master of Business Administration</h5>
+                            <p>Accountancy, Finance, Management, Human Resoures, Audit, Banking, Business Administration</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more course cards -->
+            </div>
+        </div>
+    </section>
+ <!-- Footer Section -->
+ <footer class="footer">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Contact Form Column -->
+            <div class="col-md-6 col-lg-4">
+                <h4 class="footer-heading">Contact Us</h4>
+                <form class="contact-form" id="footerContactForm">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Email Address" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="tel" class="form-control" placeholder="Phone Number">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div class="col-md-6 col-lg-4">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="quick-links">
+                    <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Library</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Alumni</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Careers</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Placement</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Links Column -->
+            <div class="col-md-12 col-lg-4">
+                <h4 class="footer-heading">Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+
+                <div class="contact-info mt-5">
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Sangaiprou, Imphal West</p>
+                    <p><i class="fas fa-phone me-2"></i>📞 +91 6009164298 </p>
+                    <p><i class="fas fa-envelope me-2"></i>randhircollegeofcommerce@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // News Ticker Animation
+        const ticker = document.querySelector('marquee');
+        ticker.addEventListener('mouseover', () => ticker.stop());
+        ticker.addEventListener('mouseout', () => ticker.start());
+
+        // Mobile Menu Fix
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if(navbarCollapse.classList.contains('show')) {
+                    navbarCollapse.classList.remove('show');
+                }
+            });
+        });
+
+        // Simple Form Validation
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Add validation logic here
+            alert('Thank you for your message! We will respond shortly.');
+        });
+        // Form Submission Handling
+        document.getElementById('footerContactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Add your form submission logic here
+            alert('Thank you for your message! We will respond shortly.');
+            this.reset();
+            
+            // Add animation to submit button
+            const btn = this.querySelector('button');
+            btn.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                btn.style.transform = 'scale(1)';
+            }, 100);
+        });
+
+        // Smooth scroll for quick links
+        document.querySelectorAll('.quick-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
