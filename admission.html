@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions | Premier Commerce College</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome@6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #16a085;
+            --accent-color: #e67e22;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f8f9fa;
+        }
+
+        .admission-hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.8)), 
+                        url('https://source.unsplash.com/random/1920x600/?admission') center/cover;
+            padding: 100px 0;
+            color: white;
+        }
+
+        .fee-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .document-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .document-list li {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .form-section {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 2rem;
+        }
+
+        .course-select {
+            border: 2px solid var(--secondary-color);
+            border-radius: 8px;
+            padding: 0.8rem;
+            width: 100%;
+        }
+
+        .highlight-fee {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .admission-hero {
+                padding: 60px 0;
+            }
+        }
+        .home-icon {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1000;
+    }
+
+    .home-icon a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--secondary-color);
+        color: white;
+        text-decoration: none;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        transition: all 0.3s ease;
+    }
+
+    .home-icon a:hover {
+        background: var(--primary-color);
+        transform: translateY(-3px) scale(1.1);
+    }
+
+    .home-icon i {
+        font-size: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+        .home-icon {
+            bottom: 20px;
+            right: 20px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <!-- Admission Hero Section -->
+    <section class="admission-hero">
+        <div class="container text-center">
+            <h1 class="display-4 mb-4">Admissions 2024</h1>
+            <p class="lead">Begin Your Journey with Randhir College of Commerce</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Course Selection -->
+                <div class="col-lg-4">
+                    <div class="fee-card">
+                        <h3 class="mb-4">Select Your Program</h3>
+                        <select class="course-select" id="courseSelect">
+                            <option value="" disabled selected>Choose Program</option>
+                            <optgroup label="Undergraduate">
+                                <option value="bcom" data-fee="4000">B.Com (Hons)</option>
+                            </optgroup>
+                            <optgroup label="Postgraduate">
+                                <option value="mcom" data-fee="5000">M.Com</option>
+                                <option value="mba" data-fee="10000">MBA (Finance)</option>
+                            </optgroup>
+                            <optgroup label="Research">
+                                <option value="phd" data-fee="40000">PhD in Commerce</option>
+                                <option value="jrf" data-fee="25000">JRF Fellowship</option>
+                            </optgroup>
+                        </select>
+                        
+                        <div class="mt-4">
+                            <h5>Program Fee</h5>
+                            <div class="highlight-fee" id="courseFee">₹0</div>
+                            <small class="text-muted">(Per Annum)</small>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 fee-card">
+                        <h4 class="mb-3">Required Documents for Counselling.</h4>
+                        <ul class="document-list">
+                            <li><i class="fas fa-file-alt text-primary"></i>10th & 12th Marksheets</li>
+                            <li><i class="fas fa-graduation-cap text-success"></i>Graduation Certificate (PG)</li>
+                            <li><i class="fas fa-id-card text-danger"></i>Government ID Proof</li>
+                            <li><i class="fas fa-passport text-warning"></i>Migration Certificate</li>
+                            <li><i class="fas fa-image text-info"></i>Passport Size Photos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Application Form -->
+                <div class="col-lg-8">
+                    <div class="form-section">
+                        <h3 class="mb-4">Application Form</h3>
+                        <form id="admissionForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label>Full Name</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Email Address</label>
+                                    <input type="email" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Phone Number</label>
+                                    <input type="tel" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Date of Birth</label>
+                                    <input type="date" class="form-control" required>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <h5 class="mt-4">Educational Background</h5>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label>Last Qualification</label>
+                                            <input type="text" class="form-control" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>Percentage/CGPA</label>
+                                            <input type="number" step="0.01" class="form-control" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Document Upload -->
+          <div class="mb-3">
+            <label class="form-label">Upload Document</label>
+            <div class="input-group">
+              <input
+                type="file"
+                class="form-control"
+                id="fileUpload"
+                accept=".jpeg,.jpg,.pdf"
+              />
+              <input
+                type="text"
+                class="form-control"
+                id="docName"
+                placeholder="Enter document title"
+              />
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="uploadDocument()"
+              >
+                Upload
+              </button>
+            </div>
+            <div id="uploadMessage" class="form-text text-success"></div>
+          </div>
+
+          <div class="uploaded-list" id="uploadedList">
+            <!-- Uploaded files will be listed here -->
+          </div>
+                                
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg w-100">
+                                        Submit Application
+                                    </button>
+                                </div>
+                                <div class="col-12">
+                                    <span type="submit" class="btn btn-primary btn-lg w-100">
+                                        Helpline no.- +91 60091 64298
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Add this HTML just before closing body tag -->
+<div class="home-icon">
+    <a href="index.html" title="Return to Homepage">Back
+        <i class="fas fa-home"></i>
+    </a>
+</div>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Course Fee Calculator
+        const courseSelect = document.getElementById('courseSelect');
+        const courseFee = document.getElementById('courseFee');
+
+        courseSelect.addEventListener('change', () => {
+            const selectedOption = courseSelect.options[courseSelect.selectedIndex];
+            const fee = selectedOption.getAttribute('data-fee');
+            courseFee.textContent = `₹${fee}`;
+        });
+
+        // Form Validation
+        document.getElementById('admissionForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            if(courseSelect.value === '') {
+                alert('Please select a program first!');
+                return;
+            }
+
+            // Add actual form submission logic here
+            alert('Application Submitted Successfully!');
+            e.target.reset();
+            courseSelect.value = '';
+            courseFee.textContent = '₹0';
+        });
+        // Handle document upload
+    function uploadDocument() {
+      const fileInput = document.getElementById("fileUpload");
+      const docNameInput = document.getElementById("docName");
+      const uploadMessage = document.getElementById("uploadMessage");
+      const uploadedList = document.getElementById("uploadedList");
+
+      if (!fileInput.files.length) {
+        alert("Please select a file to upload.");
+        return;
+      }
+      if (!docNameInput.value.trim()) {
+        alert("Please enter a document title.");
+        return;
+      }
+      
+      // Get the file and validate type
+      const file = fileInput.files[0];
+      const allowedTypes = ["image/jpeg", "image/jpg", "application/pdf"];
+      if (!allowedTypes.includes(file.type)) {
+        alert("Only JPEG, JPG, and PDF files are allowed.");
+        return;
+      }
+      
+      // Create a new uploaded item
+      const item = document.createElement("div");
+      item.classList.add("uploaded-item");
+      item.innerText = docNameInput.value.trim() + " (" + file.name + ")";
+      uploadedList.appendChild(item);
+      
+      // Clear inputs and show success message
+      uploadMessage.innerText = "Document uploaded successfully!";
+      fileInput.value = "";
+      docNameInput.value = "";
+      setTimeout(() => { uploadMessage.innerText = ""; }, 3000);
+    }
+
+        
+        
+    </script>
+</body>
+</html>
